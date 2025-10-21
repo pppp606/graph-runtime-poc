@@ -1,0 +1,7 @@
+{
+  "nodes": [
+    { "id": "fetchUser", "wasm": "./nodes/fetchUser.wasm" },
+    { "id": "calcDiscount", "wasm": "./nodes/calcDiscount.wasm", "dependsOn": ["fetchUser"] },
+    { "id": "renderProfile", "wasm": "./nodes/renderProfile.wasm", "dependsOn": ["calcDiscount"] }
+  ]
+}
