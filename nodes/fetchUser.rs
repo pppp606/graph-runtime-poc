@@ -12,7 +12,9 @@ fn panic(_info: &PanicInfo) -> ! {
 /// standard `fn main()` expectation. The runtime never calls this; it
 /// exists solely to satisfy the linker when using `#![no_main]`.
 #[no_mangle]
-pub extern "C" fn _start() {}
+pub extern "C" fn _start() -> ! {
+    loop {}
+}
 
 #[no_mangle]
 pub extern "C" fn main(_input: i32) -> i32 {
