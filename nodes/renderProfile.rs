@@ -1,4 +1,5 @@
 #![no_std]
+#![no_main]
 
 use core::panic::PanicInfo;
 
@@ -6,6 +7,9 @@ use core::panic::PanicInfo;
 fn panic(_info: &PanicInfo) -> ! {
     loop {}
 }
+
+#[no_mangle]
+pub extern "C" fn _start() {}
 
 #[no_mangle]
 pub extern "C" fn main(input: i32) -> i32 {
